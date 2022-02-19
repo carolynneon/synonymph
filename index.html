@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html>
-<title>XKCD</title>
+    
+<head>
+    <meta charset="utf-8" />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <title>Synonymph</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
 
 <body>
-    <form>
-        Enter a word: <input type="text" id="wordField" value="word"><br/>
-        <input id="dictionaryButton" type="submit" value="Submit">
-    </form>
-    <p id="definition">(definition goes here)</p>
+    <div id="content">
+        <div id="header">
+            <button id="synonymphButton"><img id="synonymph" src="/images/waddle.gif" title="It's me, Synonymph!"/></button>
+            <p id="tip">Hello! I'm Synonymph, and I need some help. You can press the button below to start! &lt3</p>
+        </div>
+        <button id="startButton">New Word</button>
+        <p id="word">The word is: [N/A]</p>
+        <form>
+            Synonym: <input type="text" id="guess" placeholder="Type a synonym"><br/>
+            <input id="submitButton" type="submit" value="Submit" disabled>
+        </form>
+    </div>
 </body>
 
-<script>
-  function buttonPressed(event) {
-    event.preventDefault();
-    var init = { method: 'GET', mode: 'cors', cache: 'default' };
-    var url = new Request("https://api.dictionaryapi.dev/api/v2/entries/en/" + document.getElementById("wordField").value, init);
-    
-    fetch(url)
-        .then(function(response) {
-            console.log(response);
-            return response.json();
-        }).then(function(json) {
-            console.log(json);
-            document.getElementById("definition").innerHTML = "definition: " + json[0]["meanings"][0]["definitions"][0]["definition"];
-        }).catch(function(error) {
-            console.log(error);
-        });
-  }
-
-  document.getElementById("dictionaryButton").addEventListener("click", buttonPressed);
+<script text="type/javascript" src="/script.js">
 </script>
+
 </html>

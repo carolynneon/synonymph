@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #95F2D9;
+    color: #41463D;
+    font-family: "Garamond", "Times New Roman", serif;
+}
+
+#content {
+    position: fixed;
+    top: 0px;
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+}
+
+#synonymphButton {
+    background-color: transparent;
+    border: none;
+}
+
+#tip {
+    background-color: #B8CDF8;
+    border: 2px solid #9D8DF1;
+    border-radius: 8px;
+    width: 200px;
+    padding: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#startButton {
+    background-color: #1CFEBA;
+    border-color: #41463D;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 5px;
+    font-family: "Garamond", "Times New Roman", serif;
+    font-size: 12pt;
+}
+
+#startButton:hover {
+    background-color: #1CEEAA;
+}
+
+#startButton:active {
+    background-color: #1CCE8A;
+    padding: 4px;
+    margin: 6px;
+}
+
+#word {
+    font-size: 14pt;
+    padding: 5px;
+}
+
+#guess {
+    background-color: #B8CDF8;
+    color: #41463D;
+    border: 2px solid #9D8DF1;
+    width: 120px;
+    font-family: "Garamond", "Times New Roman", serif;
+    font-size: 12pt;
+    padding: 5px;
+}
+
+#submitButton {
+    background-color: #1CFEBA;
+    border-color: #41463D;
+    color: #41463D;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 5px;
+    font-family: "Garamond", "Times New Roman", serif;
+    font-size: 11pt;
+}
+
+#submitButton:hover {
+    background-color: #1CEEAA;
+}
+
+#submitButton:active {
+    background-color: #1CCE8A;
+    padding: 4px;
+    margin: 6px;
+}
+
+#submitButton:disabled {
+    background-color: #9CBE9A;
+    color: #71766D;
+}
