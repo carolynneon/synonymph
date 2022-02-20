@@ -19,6 +19,11 @@ body {
     text-align: center;
 }
 
+#logo {
+    max-width: 90%;
+    height: auto;
+}
+
 #header {
     display: flex;
     justify-content: center;
@@ -35,6 +40,7 @@ body {
     border-radius: 8px;
     width: 200px;
     padding: 5px;
+    margin-right: 10px;
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -68,7 +74,7 @@ body {
     background-color: #B8CDF8;
     color: #41463D;
     border: 2px solid #9D8DF1;
-    width: 120px;
+    width: 150px;
     font-family: "Garamond", "Times New Roman", serif;
     font-size: 12pt;
     padding: 5px;
@@ -98,4 +104,15 @@ body {
 #submitButton:disabled {
     background-color: #9CBE9A;
     color: #71766D;
+}
+
+#footer {
+    display: block;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 38px;
+    padding: 10px;
+    text-align: center;
+    background-color: #B8CDF8;
 }

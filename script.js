@@ -3,6 +3,7 @@ var synonyms = [];
 
 function synonymphButtonPressed(event) {
     event.preventDefault();
+    document.getElementById("synonymph").src = "/images/synonymph_mad.png";
     if (document.getElementById("submitButton").disabled == true) {
         if (Math.random() > 0.5) document.getElementById("tip").textContent = "Aren't you going to pick a new word? Press the button, not me!";
         else document.getElementById("tip").textContent = "Enough about me, let's start already!";
@@ -76,6 +77,7 @@ function startButtonPressed(event) {
                 document.getElementById("word").textContent = "The word is: " + word;
                 document.getElementById("submitButton").disabled = false;
                 document.getElementById("tip").textContent = "Alright, the next word is \"" + word + "!\" Can you enter a word that means the same thing?";
+                document.getElementById("synonymph").src = "/images/synonymph_think.png";
             }
         }).catch(function(error) {
             console.log(error);
@@ -90,6 +92,10 @@ function submitButtonPressed(event) {
     if (document.getElementById("guess").value == "") {
         if (Math.random() > 0.5) document.getElementById("tip").textContent = "Um, excuse me? Did you forget to type anything?";
         else document.getElementById("tip").textContent = "You left the input field blank! Please enter a synonym for \"" + word + ".\"";
+        document.getElementById("synonymph").src = "/images/synonymph_mad.png";
+    } else if (document.getElementById("guess").value.toLowerCase() == word) {
+        document.getElementById("tip").textContent = "Hey, you can't just enter the same word! I need a different one!";
+        document.getElementById("synonymph").src = "/images/synonymph_mad.png";
     } else if (synonyms.indexOf(document.getElementById("guess").value.toLowerCase()) != -1) {
         document.getElementById("submitButton").disabled = true;
         switch (Math.floor(Math.random() * 3)) {
@@ -105,7 +111,9 @@ function submitButtonPressed(event) {
             default:
                 document.getElementById("tip").textContent = "Um, you won? I think?";
         }
+        document.getElementById("synonymph").src = "/images/synonymph_happy.png";
     } else {
+        document.getElementById("synonymph").src = "/images/synonymph_think.png";
         switch (Math.floor(Math.random() * 6)) {
             case 0:
                 hint = synonyms[Math.floor(Math.random() * synonyms.length)];
