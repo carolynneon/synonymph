@@ -100,10 +100,10 @@ function submitButtonPressed(event) {
         document.getElementById("submitButton").disabled = true;
         switch (Math.floor(Math.random() * 3)) {
             case 0:
-                document.getElementById("tip").textContent = "Hey, that word works! The meaning of " + document.getElementById("guess").value + " matches " + word + "!";
+                document.getElementById("tip").textContent = "Hey, that word works! The meaning of " + document.getElementById("guess").value.toLowerCase() + " matches " + word + "!";
                 break;
             case 1:
-                document.getElementById("tip").textContent = "" + document.getElementById("guess").value.charAt(0).toUpperCase() + document.getElementById("guess").value.slice(1) + ", huh? Hey, that actually sounds right! Nice job!";
+                document.getElementById("tip").textContent = "" + document.getElementById("guess").value.charAt(0).toUpperCase() + document.getElementById("guess").value.slice(1).toLowerCase() + ", huh? Hey, that actually sounds right! Nice job!";
                 break;
             case 2:
                 document.getElementById("tip").textContent = "Congratulations, you correctly entered a synonym of " + word + "! There isn't a prize, though.";
