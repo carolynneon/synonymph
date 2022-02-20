@@ -72,10 +72,12 @@ function startButtonPressed(event) {
                 }
             });
             console.log(synonyms);
-            if (synonyms.length == 0) startButtonPressed(event);
+            if (synonyms.length < 2) startButtonPressed(event);
             else {
                 document.getElementById("word").textContent = "The word is: " + word;
                 document.getElementById("submitButton").disabled = false;
+                document.getElementById("guess").value = "";
+                document.getElementById("guess").setAttribute('value','');
                 document.getElementById("tip").textContent = "Alright, the next word is \"" + word + "!\" Can you enter a word that means the same thing?";
                 document.getElementById("synonymph").src = "/images/synonymph_think.png";
             }
